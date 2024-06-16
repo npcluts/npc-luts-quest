@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #87CEEB; /* Sky blue background */
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    color: rgba(22, 36, 71, 0.9); /* Dark blue background color */
+    margin-bottom: 20px; /* Space between title and container */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(22, 36, 71, 0.9); /* Dark blue background with transparency */
+    padding: 20px;
+    border: 4px solid #e43f5a; /* Red border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    max-width: 90%;
+    width: 100%;
+    margin-top: 20px; /* Adjusted margin for better spacing */
+}
+
+#quest {
+    font-size: 22px; /* Larger font size for the quest */
+    font-weight: bold;
+    margin-top: 20px; /* Increased margin for better spacing */
+    color: #fff; /* White text color for better contrast */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow for emphasis */
+}
+
+#questMessage {
+    font-size: 16px; /* Slightly smaller font size for the message */
+    margin-top: 10px;
+    color: #fff; /* White text color for better contrast */
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow for emphasis */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e43f5a; /* Red background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+button:hover {
+    background-color: #ff5c73; /* Lighter red on hover */
+}
+
+.caption {
+    text-align: center;
+    font-size: 16px;
+    color: rgba(22, 36, 71, 0.9); /* Dark blue background color */
+    margin-top: 20px; /* Adjusted margin for better spacing */
+}
+
+.hidden-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+}
+
+
+#toggleButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.land-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%; /* Adjusted height */
+    background-image: url('images/land.png'); /* Adjusted path */
+    background-repeat: repeat; /* Tile the background image */
+    z-index: -1; /* Ensure the land is behind other content */
+}
+
+.cloud-container {
+    position: fixed;
+    top: 10%; /* Adjust positioning as needed */
+    left: 0;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 200px; /* Adjust size of the cloud */
+    height: 80px; /* Adjust height of the cloud */
+    background-color: #fff; /* Cloud color */
+    border-radius: 50%;
+    animation-duration: 20s; /* Adjust animation duration */
+    animation-iteration-count: infinite; /* Infinite animation */
+    opacity: 0.8; /* Adjust opacity for a softer look */
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    border-radius: 50%;
+    opacity: inherit;
+}
+
+.cloud::before {
+    width: 60px; /* Adjust width of the before pseudo-element */
+    height: 60px; /* Adjust height of the before pseudo-element */
+    top: -20px; /* Adjust top position to create top arc */
+    left: 20px; /* Adjust left position to create top arc */
+}
+
+.cloud::after {
+    width: 80px; /* Adjust width of the after pseudo-element */
+    height: 80px; /* Adjust height of the after pseudo-element */
+    bottom: -20px; /* Adjust bottom position to create bottom arc */
+    right: 20px; /* Adjust right position to create bottom arc */
+}
+
+.cloud1 {
+    top: 10%; /* Adjust top position */
+    left: -20%; /* Adjust left position */
+    animation-name: moveCloud1; /* Unique animation for cloud1 */
+}
+
+.cloud2 {
+    top: 20%; /* Adjust top position */
+    left: 30%; /* Adjust left position */
+    animation-name: moveCloud2; /* Unique animation for cloud2 */
+}
+
+.cloud3 {
+    top: 30%; /* Adjust top position */
+    left: 60%; /* Adjust left position */
+    animation-name: moveCloud3; /* Unique animation for cloud3 */
+}
+
+.cloud4 {
+    top: 40%; /* Adjust top position */
+    left: 90%; /* Adjust left position */
+    animation-name: moveCloud4; /* Unique animation for cloud4 */
+}
+
+.cloud5 {
+    top: 50%; /* Adjust top position */
+    left: 120%; /* Adjust left position */
+    animation-name: moveCloud5; /* Unique animation for cloud5 */
+}
+
+.cloud6 {
+    top: 60%; /* Adjust top position */
+    left: 150%; /* Adjust left position */
+    animation-name: moveCloud6; /* Unique animation for cloud6 */
+}
+
+@keyframes moveCloud1 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveCloud2 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveCloud3 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveCloud4 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveCloud5 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveCloud6 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 20px;
+    }
+
+    #quest {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+
+    #questMessage {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    .container {
+        padding: 15px;
+        border-width: 3px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .caption {
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    #toggleButton {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 18px;
+    }
+
+    #quest {
+        font-size: 18px; /* Adjusted font size for smaller screens */
+    }
+
+    #questMessage {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+
+    .container {
+        padding: 10px;
+        border-width: 2px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .caption {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+
+    #toggleButton {
+        font-size: 8px;
+        padding: 3px 6px;
+    }
+}

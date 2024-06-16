@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPC Luts - Quest Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+    <div class="cloud-container">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+    <div class="cloud cloud5"></div>
+    <div class="cloud cloud6"></div>
+    </div>
+
+    <header>
+        <h1 class="page-title">Fun Quest</h1>
+    </header>
+    
+    <div class="container">
+        <p id="quest">Discover a new adventure!</p>
+        <button id="questButton" onclick="generateQuest()">Click to get your quest</button>
+    </div>
+
+    <p class="caption">This will be your quest for the night. If you complete this quest, NPC Luts will provide you a magical mystic potion.</p>
+
+    <!-- Hidden Button for Toggling Quest Button Visibility -->
+    <button id="toggleButton" class="hidden-button" onclick="toggleQuestButton()">Hidden Button</button>
+
+    <!-- Land Container -->
+    <div class="land-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
